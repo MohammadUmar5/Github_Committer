@@ -8,3 +8,18 @@ vsc-extension-quickstart.md
 **/*.map
 **/eslint.config.mjs
 **/.vscode-test.*
+# Ignore node_modules except production dependencies
+node_modules/**
+!node_modules/simple-git/**
+
+# Ignore test files
+tests/**
+
+# Ignore configuration files
+.gitignore
+.eslintrc.json
+.prettierrc
+package-lock.json
+
+# Ignore any files not needed for runtime
+.env
