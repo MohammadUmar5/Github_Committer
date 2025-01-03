@@ -1,0 +1,77 @@
+{
+  "name": "github-commiter",
+  "displayName": "GitHub Committer",
+  "description": "A VS Code extension to automatically track changes and commit them to GitHub at regular intervals, with OAuth authentication and secure token persistence.",
+  "version": "0.0.4",
+  "icon": "images/logo.png",
+  "publisher": "MohdUmarWarsi",
+  "galleryBanner": {
+    "color": "#21214c",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MohammadUmar5/Github_Committer.git"
+  },
+  "engines": {
+    "vscode": "^1.96.2"
+  },
+  "categories": [
+    "Education",
+    "Extension Packs"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onFileSystemChange"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "github-commiter.startAutoCommit",
+        "title": "Start Auto Commit"
+      },
+      {
+        "command": "github-commiter.stopAutoCommit",
+        "title": "Stop Auto Commit"
+      },
+      {
+        "command": "github-commiter.authorizeWithGitHub",
+        "title": "Authorize with GitHub"
+      },
+      {
+        "command": "github-commiter.clearToken",
+        "title": "Clear Token"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "github-commiter.token": {
+          "type": "string",
+          "default": "",
+          "description": "The stored GitHub token used for authentication. This is securely stored using VS Code Secret Storage."
+        }
+      }
+    }
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test",
+    "build": "echo 'No build step defined. Add one if needed.'"
+  },
+  "devDependencies": {
+    "@types/mocha": "10.0.10",
+    "@types/node": "20.8.0",
+    "@types/vscode": "1.96.0",
+    "@vscode/test-cli": "0.0.10",
+    "@vscode/test-electron": "2.4.1",
+    "eslint": "9.16.0",
+    "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "simple-git": "3.27.0"
+  }
+}
